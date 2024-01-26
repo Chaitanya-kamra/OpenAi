@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0E6FFF"
+
+    tools:context=".ui.views.fragments.DashboardFragment">
+    <LinearLayout
+        android:id="@+id/lnlTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/figtree_semi_bold"
+            android:text="Dashboard"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+             />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_settings"
+            />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/main_top_cuved"
+        android:fillViewport="true"
+        android:layout_marginTop="20dp"
+        android:scrollIndicators="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lnlTitle">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:id="@+id/lnldashMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+                <TextView
+                    android:id="@+id/tvGreetings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/figtree_regular"
+                    android:textColor="#999CA0"
+                    android:textSize="16sp"
+                    android:text="Good Morning" />
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/figtree_semi_bold"
+                    android:text="Ajay Manva"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    app:drawableEndCompat="@drawable/ic_hello" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tvOverview"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/figtree_regular"
+                                android:text="Overview"
+                                android:textColor="#999CA0"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/tvDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:background="@drawable/rectangular_grey_box_padding"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/figtree_regular"
+                                android:textColor="@color/black"
+                                android:textSize="12sp"
+                                app:drawableEndCompat="@drawable/ic_clock"
+                                tools:text="22 Aug - 23 Sep" />
+                        </LinearLayout>
+
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/chart"
+                            android:layout_width="match_parent"
+                            android:layout_height="136dp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:scrollbars="none"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:padding="12dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivClicksIcon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="16dp"
+                                    android:src="@drawable/ic_purle_arrow" />
+
+                                <TextView
+                                    android:id="@+id/tvTotalClicksText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/ivClicksIcon"
+                                    android:layout_marginBottom="4dp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/figtree_semi_bold"
+                                    android:maxLines="1"
+                                    tools:text="123"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/tvMainTextDesc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/figtree_regular"
+                                    android:maxLines="1"
+                                    android:text="Today’s clicks"
+                                    android:textColor="#999CA0"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            app:cardCornerRadius="8dp"
+                            android:layout_marginStart="16dp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:padding="12dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivLocationIcon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="16dp"
+                                    android:src="@drawable/ic_location" />
+
+                                <TextView
+                                    android:id="@+id/tvMainLocationText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/ivLocationIcon"
+                                    android:layout_marginBottom="4dp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/figtree_semi_bold"
+                                    android:maxLines="1"
+                                    tools:text="Ahamedab.."
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/tvLocationText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/figtree_regular"
+                                    android:maxLines="1"
+                                    android:text="Top Location"
+                                    android:textColor="#999CA0"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            app:cardCornerRadius="8dp"
+                            android:layout_marginStart="16dp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:padding="12dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/ivSourceIcon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="16dp"
+                                    android:src="@drawable/ic_source" />
+
+                                <TextView
+                                    android:id="@+id/tvMainSourceText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="4dp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/figtree_semi_bold"
+                                    android:maxLines="1"
+                                    tools:text="Instagram"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/tvSourceText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvMainSourceText"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/figtree_regular"
+                                    android:maxLines="1"
+                                    android:text="Top Source"
+                                    android:textColor="#999CA0"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rectangular_analytics"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/figtree_semi_bold"
+                        android:text="View Analytics"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_arrow" />
+                </LinearLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="40dp"
+                    >
+
+                    <RadioGroup
+                        android:id="@+id/rgLinks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/rbTopLinks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:background="@drawable/drawable_tab_selector"
+                            android:button="@null"
+                            android:checked="true"
+                            android:fontFamily="@font/figtree_semi_bold"
+                            android:gravity="center"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="6dp"
+                            android:text="Top Links"
+                            android:textColor="@drawable/drawable_tab_text_color_selector"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/rbRecent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/drawable_tab_selector"
+                            android:button="@null"
+                            android:checked="false"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="6dp"
+                            android:fontFamily="@font/figtree_semi_bold"
+                            android:gravity="center"
+                            android:text="Recent Links"
+                            android:textColor="@drawable/drawable_tab_text_color_selector"
+                            android:textSize="16sp" />
+                    </RadioGroup>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/search"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvLinks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@drawable/rectangular_analytics"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/figtree_semi_bold"
+                        android:text="View all Links"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_links" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvWhatsap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/rectangular_whatsapp"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/figtree_semi_bold"
+                    android:text="Talk with us"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:drawableStartCompat="@drawable/ic_whatsap" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/rectangular_frequent"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/figtree_semi_bold"
+                    android:text="Frequently Asked Questions"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:drawableStartCompat="@drawable/ic_frequent_ques" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lnlDashError"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:gravity="center">
+                <TextView
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:text="Something went wrong.."
+                    android:gravity="center"
+                    android:layout_height="wrap_content"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btDashError"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="RETRY"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10sp"
+                    android:backgroundTint="@color/black"/>
+            </LinearLayout>
+            <ProgressBar
+                android:id="@+id/pbDashLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:indeterminateTint="@color/blue"
+                />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
